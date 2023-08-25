@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="egovframework.bumilboard.sample.vo.boardVo">
+
+	<select id="selectBoard" parameterType="int" resultType="BoardVo">
+		select * from ex_board_table
+		where board_id = #{board_id}
+	</select>
+
+	
+	<insert id="insertBoard" parameterType="BoardVo">
+<!-- 		insert into ex_board_table(board_id, title, content, writer, writer_phone, service, type1, type2, agree, view_count, comment_state, reg_date)
+		values(#{board_id}, #{title}, #{content}, #{writer}, #{writer_phone}, #{service}, #{type1}, #{type2}, #{agree}, #{view_count}, #{comment_state}, now()) -->
+		insert into ex_board_table(board_id, title, content, writer, writer_phone, service, type1, type2, agree, view_count, comment_state, board_password)
+		values(#{board_id}, #{title}, #{content}, #{writer}, #{writer_phone}, #{service}, #{type1}, #{type2}, #{agree}, #{view_count}, #{comment_state}, #{board_password} )
+	</insert>
+	
+	
+	<!-- 파일 처리 -->
+	<insert id="insertFiles" parameterType="map">
+		insert into board_file_table(board_id, file_name, file_order, file_size, original_file_name, file_ext, reg_date)
+		values(#{board_id}, #{file_name}, #{file_order}, #{file_size}, #{original_file_name}, #{file_ext}, now())
+	</insert>
+
+	<!-- 파일 데이터 가져오기 -->
+	<select id="getFilesInBoard" parameterType="int" resultType="fileVo">
+		select file_name, board_id, reg_date, file_order, file_size, file_ext, original_file_name 
+		from board_file_table
+		where board_id = #{board_id}
+	</select>
+	
+	
+	<!-- 게시판 list 가져오기 -->
+	<select id="selectBoardList" parameterType="map" resultType="BoardVo">
+		select row_number() over(order by reg_date) as board_row,
+		board_id, title, content, writer, writer_phone, service, type1, type2, agree, view_count, comment_state, reg_date, board_password
+		from ex_board_table	
+		order by reg_date desc
+		limit #{offset}, #{pageSize}
+	</select>
+	
+	<select id="selectBoardListCnt" resultType="int">
+		select count(*)
+		from ex_board_table		
+	</select>
+	
+	<!-- board 게시글 수정  -->
+	<update id="updateBoard" parameterType="BoardVo">
+		update ex_board_table
+		set title = #{title}, content = #{content}, writer = #{writer}, writer_phone = #{writer_phone}, service = #{service}, type1 = #{type1}, type2 = #{type2}, board_password = #{board_password}
+		where board_id = #{board_id}
+	</update>
+	
+	<!-- 게시글 비밀번호 가져오기 -->
+	<select id="getBoardPassword" resultType="String" parameterType="int">
+		select board_password from ex_board_table
+		where board_id = #{board_id}
+	</select>
+	
+	<!-- 게시판 다음글 이전글  -->
+	<select id="selectSideBoards" parameterType="int" resultType="SideBoardVo">
+		select * from(
+		select board_id, 
+			LEAD(board_id,1,9999) OVER(ORDER BY board_id) AS next,
+	         LAG(board_id,1,9999) OVER(ORDER BY board_id) AS last,
+	         TITLE,
+	         LEAD(TITLE,1,9999) OVER(ORDER BY board_id) AS nextTitle,
+	         LAG(TITLE,1,9999) OVER(ORDER BY board_id) AS lastTitle
+	         
+			FROM schema1.ex_board_table
+	        order by board_id DESC
+		) as a where board_id = #{board_id};
+	</select>
+	
+	<!-- 댓글 작성시 state 변경 -->
+	<update id="updateAnswerState" parameterType="Map">
+		update ex_board_table
+		set comment_state = #{state}
+		where board_id = #{board_id}
+	</update>
+	
+	
+	<!-- 게시판 삭제 -->
+	<delete id="deleteBoard" parameterType="Map">
+		delete from ex_board_table
+		where board_id = #{board_id} and board_password = #{password}
+	</delete>
+	
+	<!-- 게시판 파일들 삭제(db) -->
+	<delete id="deleteBoardFiles" parameterType="int">
+		delete from board_file_table
+		where board_id = #{board_id}
+	</delete>
+	
+	<!-- 게시판 파일들 선택 삭제(db) -->
+	<delete id="deleteBoardFile" parameterType="map">
+		delete from board_file_table
+		where board_id = #{board_id} and file_name = #{file_name}
+	</delete> 
+	
+	<!-- upload폴더에 해당된 파일들 삭제하기 위해 UUID이름 가져오기 -->
+	<select id="deleteBoardFilesUpload" parameterType="int" resultType="fileVo">
+		select *
+		from board_file_table
+		where board_id = #{board_id}
+	</select>
+	
+	<!-- 조회수 -->
+	<update id="increaseViewCount" parameterType="int">
+		update ex_board_table
+		set view_count = view_count+1
+		where board_id = #{board_id}
+	</update>
+	
+	
+	<!-- 타입1 드롭박스 종류 가져오기 -->
+	<select id="getType1List" resultType="TypeVo">
+		select * from type_table
+		where parent_code is null
+		order by pk_code
+	</select>
+	
+	<!-- 타입2 드롭박스 종류 가져오기  -->
+	<select id="getType2List" resultType="typeVo" parameterType="string">
+		select * from type_table
+		where parent_code = #{pk_code}
+		order by pk_code
+	</select>
+	
+	<!-- 서비스 드롭박스 종류 가져오기 -->
+	<select id="getServiceList" resultType="ServiceVo">
+		select * from service_table
+	</select>
+	
+	
+	<!-- 시퀀스 가져오기 -->
+	<select id="getSeq" resultType="int">
+		select idseq_value from seq_table
+		order by idseq_value desc
+		limit 1;
+	</select>
+	
+	
+	<!-- 시퀀스 업데이트 -->
+	<update id="updateSeq">
+		update seq_table
+		set idseq_value = idseq_value + 1	
+	</update>
+</mapper>

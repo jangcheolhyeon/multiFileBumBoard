@@ -1,0 +1,272 @@
+@charset "utf-8";
+#container {background:#fff}
+
+.logo {    position: absolute;    top: 20px;    left: 30px;    z-index: 10;}
+.logo a{font-size: 0;background: url(../img/logo.png)0 0 no-repeat;height: 46px;display: block;width: 128px;background-size: contain;/* margin: 18px 0 0 1rem; */}
+
+
+.visual {width:100%;height: 288px;overflow: hidden;font-family: 'GmarketSans' !important;position: relative;}
+.visual > div.v_txt {max-width: 1400px;margin:0 auto;position: absolute;top: 0;left: 50%;transform: translateX(-50%);color: #fff;z-index: 10;padding: 0 100px;box-sizing: border-box;width: 100%;}
+.visual > .inner {width:100%;background-repeat: no-repeat;height: 288px;background-size: cover;background-position: center center;background-image: url(../img/bg_visual.jpg);overflow: hidden;}
+.visual.active .inner {animation: zoom 3s ease-in-out both;transform: scale(1.1);}
+.visual > .inner > div { width:100%;  max-width:1200px; margin:0 auto;color: #fff;}
+.v_txt > h2 {margin: 63px 0 19px 0;font-size: 46px;}
+.txt_cover {display: block;overflow: hidden;line-height: 1.4;} 
+.move_point {
+    display: block;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(0.5em);
+    transition-property: transform, opacity;
+    transition-duration: 0.6s, 0.5s;
+    transition-timing-function: ease;
+    transition-delay:  250ms;
+}
+.move_point > b {display: inline-block;transform: translateY(1.5rem);}
+.move .move_point{opacity: 1 !important;transform: translateY(0) !important;}
+
+.v_txt > p {opacity: 0;transition-property:transform  opacity;transition-duration: 1s;transform: translateY(1rem);font-size: 15px;font-weight: normal;text-shadow: 1px 2px 5px #0c1637;}
+.v_txt > p span b {font-weight: normal;}
+.v_txt > p.move {opacity: 1; transform: translateY(0) !important;}
+
+
+.go_box {position: relative;transition-property:transform  opacity;transition-duration: 1s;transform: translateY(1rem);opacity:0;color:#fff;display: inline-block;margin: 8px 0 0 0;font-size: 13px;box-sizing: border-box;padding: 9px 35px 7px 19px;border: 1px solid #ffffff87;border-radius: 30px;line-height: 1;background: linear-gradient(150deg, #16457b,  transparent 40%,#000000a1 90%,#184882);}
+.go_box:hover {     background: #fff;color: #002a5d;background: linear-gradient(150deg, #ffffff 20%,  #d6dae2 40%,#ffffff 90%,#d6dae2 );}
+.go_box i {
+  display: block;
+  position: absolute;
+  right: 4px;
+  top: 8px;
+  width: 25px;
+  height: 20px;
+  }
+
+  .go_box:hover > i  {animation: aniLR 1s infinite;}
+.move + .go_box {opacity: 1; transform: translateY(0) !important; }
+.content__body {max-width: 1400px;margin: 5rem auto 0;box-sizing: border-box;padding: 0 100px 10rem 100px;}
+
+
+
+
+/* 로그인 */
+html, body {height: 100%;width: 100%;margin: 0;padding: 0;overflow-x: hidden;background: #0e234a;}
+.login__body .logo {left:0;top:30px;position: initial;}
+#login_wrap {width:100%; height: 100%; overflow: hidden;;}
+#login_wrap > .inner {width:100%;background-repeat: no-repeat;height: 100%;background-size: cover;background-position: center center;background-image: url(../img/bg_login.jpg);overflow: hidden;}
+#login_wrap.active .inner {  animation: zoom 3s ease-in-out both;  transform: scale(1.1);}
+.login__body {max-width: 1400px;margin:0 auto;position: absolute;padding: 0 100px;min-height: 600px;top: 39px;left: 50%;transform: translateX(-50%);width: 100%;box-sizing: border-box;z-index: 10;}
+.login_box {z-index: 10; max-width: 400px;overflow: hidden;font-family: 'GmarketSans' !important;width: 100%;margin-top: 10rem;}
+
+.login_box .move_point > b {color:#fff}
+.login_box h2 {margin: 36px 0 31px 0;line-height: 1.6;}
+.login_box p {color:#fff}
+
+
+
+
+
+/* helpers/hidden.css */
+
+.hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* helpers/icon.css */
+
+.icons {
+  display: none;
+}
+
+.icon {
+  display: inline-block;
+  fill: #606468;
+  font-size: 16px;
+  font-size: 1rem;
+  height: 1em;
+  vertical-align: middle;
+  width: 1em;
+}
+
+
+/* modules/form.css */
+
+.form__field > input {
+  background-image: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.form__field > input input[type='submit'] {
+  cursor: pointer;
+}
+/* 
+.form {
+  margin: -14px;
+  margin: -0.875rem;
+} */
+
+.login input[type='password'],
+.login input[type='text'],
+.login input[type='submit'] {
+  width: 100%;
+}
+
+.form__field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 14px;
+  margin: 3rem 0;
+  border: 1px solid #2b5f9e96;
+  border-radius: 0;
+}
+.form__field:last-child {margin-top:5rem}
+.form__input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+
+/* modules/login.css */
+
+.login {
+  color: #fff;
+}
+
+.login label,
+.login input[type='text'],
+.login input[type='password'],
+.login input[type='submit'] {
+  border-radius: 0.25rem;
+  padding: 16px;
+  padding: 1rem;
+}
+
+.login label {
+  background-color: #2f467d;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  padding-left: 20px;
+  padding-left: 1.25rem;
+  padding-right: 20px;
+  padding-right: 1.25rem;
+}
+.login label  i {
+    font-size: 12px;
+    color: #ffffff82;
+}
+.login input[type='password'],
+.login input[type='text'] {
+  background-color: #27416b91;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.login input::placeholder {color: #ffffff82; font-size:13px;     letter-spacing: 0.05rem}
+
+.login input[type='password']:focus,
+.login input[type='password']:hover,
+.login input[type='text']:focus,
+.login input[type='text']:hover {
+  background-color: #193666;
+}
+
+.login input[type='submit'] {
+  background-color: #39cfe7;
+  color: #eee;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #31e2ff , #1637ff 100%);
+  padding: 1.5rem 1rem 1.2rem 1rem;
+  letter-spacing: 0.05rem;
+}
+
+.login input[type='submit']:focus,
+.login input[type='submit']:hover {
+  background-color: #31e2ff;
+}
+
+/* modules/text.css */
+
+p {
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
+  margin-top: 24px;
+  margin-top: 1.5rem;
+}
+
+.text--center {
+  text-align: center;
+  color: #fff;
+}
+.text--center a {color:#fff;display: inline-block;font-size: 11px;background: #215080;padding: 4px 15px 1px 15px;border-radius: 30px;letter-spacing: 0.05rem;}
+
+@media all and (max-width:1200px) { 
+    .visual > div.v_txt,
+    .content__body, .login__body{ width:100%; max-width: 1260px;  clear:both;  box-sizing: border-box;}
+    .v_txt > h2 {font-size: 38px;margin: 81px 0 15px 0;}
+    .v_txt > p {font-size: 14px;}
+  }
+    
+
+  @media all and (max-width:1000px) { 
+    .visual {height: 268px;}
+    .inner {width:100%;background-repeat: no-repeat;height: 268px;background-size: cover;background-position: center center;background-image: url(../img/bg_visual_m.jpg);overflow: hidden;}
+
+    .visual > div.v_txt {padding:0 25px}
+    .content__body, .login__body {padding:0 25px 10rem 25px}
+    
+    .login_box .v_txt > h2 { font-size: 38px;}
+    .login_box {margin-top: 3rem;}
+ 
+  }
+    
+  @media all and (max-width:640px){
+    .content__body, .login__body { padding: 0 16px 10rem 16px;}
+    .login_box {max-width: 100%;/* margin-top: 3rem; */}
+    .login {margin-top:4rem}
+    .inner {background-position: 60% center;background-color: #0d1c3d;}
+    .visual > div.v_txt{/* padding:0 16px; */}
+    .login_box .v_txt > h2 {font-size: 38px;margin: 38px 0 15px 0;line-height: 1.8;}
+    .v_txt > p {font-size: 13px;max-width: 85%;}
+    .v_txt > p > br {display: none;}
+    .form__field {margin:2rem 0}
+    .form__field:last-child {margin-top:3.5rem}
+
+
+  }
+
+
+@keyframes zoom {
+    0% {-webkit-transform: scale(1.1);transform: scale(1.1);}
+    100% {-webkit-transform: scale(1);transform: scale(1);}
+}
+
+
+
+@keyframes aniLR {
+  0% {
+      transform: translateX(2.5px);
+  }
+
+  50% {
+      transform: translateX(-2.5px);
+  }
+
+  100% {
+      transform: translateX(2.5px);
+  }
+}

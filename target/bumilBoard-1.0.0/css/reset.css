@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+/* reset CSS */
+body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, p, button, select, input, textarea, th, td {margin:0;padding:0;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block;}
+body {line-height:1;}
+ul, li {list-style: none;}
+html {font-size: 62.5%;-webkit-text-size-adjust:none;}
+body, input, textarea, button, select {font-size:1.4rem;line-height:1.8;letter-spacing:-0.5px;font-family:'Noto Sans',Helvetica,'맑은 고딕','Malgun Gothic','돋움',Dotum,Arial,sans-serif;font-weight:400;color: #000;}
+/*
+body, input, textarea, button, select {font-size:1.4rem;line-height:1.8;letter-spacing:-0.5px;font-family:'Noto Sans',Helvetica,'맑은 고딕','Malgun Gothic','돋움',Dotum,Arial,sans-serif;font-weight:300;color: #333;}
+*/
+a {text-decoration:none;color:#333;text-decoration:none;}
+strong, b {font-weight:600;}
+small, sub, sup {font-size:0.8em;}
+button, input[type='button'], input[type='submit'], input[type='reset'], input[type='image'] {overflow:visible;cursor:pointer;}
+img, form, fieldset, iframe, object, embed, video, audio {border:0;vertical-align:top;}
+img {max-width:100%;height:auto;} 
+table {width:100%;border-collapse:collapse;border-spacing:0;}
+caption {overflow: hidden;position: relative;width: 0;height: 0;margin: 0;padding: 0;line-height: 0;}
+em {font-style:normal;color:#999;font-size: 1.3rem}
+br {font-family:'돋움'}
+
+/* utility CSS */
+.fr {float:right !important;}
+.fl {float:left !important;}
+.txtL {text-align:left !important;}
+.txtC {text-align:center !important;}
+.txtR {text-align:right !important;}
+.blind {position:absolute;width:1px;height:1px;clip:rect(0,0,0,0);margin:-1px;overflow:hidden;}
+
+/* width */
+.wpAuto {width:auto !important;}
+.wp5  {width:5% !important;}
+.wp10 {width:10% !important;}
+.wp15 {width:15% !important;}
+.wp20 {width:20% !important;}
+.wp25 {width:25% !important;}
+.wp30 {width:30% !important;}
+.wp35 {width:35% !important;}
+.wp40 {width:40% !important;}
+.wp45 {width:45% !important;}
+.wp50 {width:50% !important;}
+.wp55 {width:55% !important;}
+.wp60 {width:60% !important;}
+.wp65 {width:65% !important;}
+.wp70 {width:70% !important;}
+.wp75 {width:75% !important;}
+.wp80 {width:80% !important;}
+.wp85 {width:85% !important;}
+.wp90 {width:90% !important;}
+.wp95 {width:95% !important;}
+.wp100 {width:100% !important;}

@@ -1,0 +1,180 @@
+@charset "utf-8";
+@import url("font-awesome.css");
+
+/* -------- Noto Sans -------- */
+@font-face {
+    font-family:'Noto Sans';
+    font-style:normal;
+    font-weight:100;
+    src: local(※),
+    url('../font/NotoSans/NotoSansKR-Thin-Hestia.eot'),
+    url('../font/NotoSans/NotoSansKR-Thin-Hestia.eot?#iefix') format('embedded-opentype'),
+    url('../font/NotoSans/NotoSansKR-Thin-Hestia.woff') format('woff'),
+    url('../font/NotoSans/NotoSansKR-Thin-Hestia.otf') format('opentype');
+}
+@font-face {
+    font-family:'Noto Sans';
+    font-style:normal;
+    font-weight:200;
+    src: local(※),
+    url('../font/NotoSans/NotoSansKR-Light-Hestia.eot'),
+    url('../font/NotoSans/NotoSansKR-Light-Hestia.eot?#iefix') format('embedded-opentype'),
+    url('../font/NotoSans/NotoSansKR-Light-Hestia.woff') format('woff'),
+    url('../font/NotoSans/NotoSansKR-Light-Hestia.otf') format('opentype');
+}
+@font-face {
+    font-family:'Noto Sans';
+    font-style:normal;
+    font-weight:300;
+    src: local(※),
+    url('../font/NotoSans/NotoSansKR-DemiLight-Hestia.eot'),
+    url('../font/NotoSans/NotoSansKR-DemiLight-Hestia.eot?#iefix') format('embedded-opentype'),
+    url('../font/NotoSans/NotoSansKR-DemiLight-Hestia.woff') format('woff'),
+    url('../font/NotoSans/NotoSansKR-DemiLight-Hestia.otf') format('opentype');
+}
+@font-face {
+    font-family:'Noto Sans';
+    font-style: normal;
+    font-weight:400;
+    src: local(※),
+    url('../font/NotoSans/NotoSansKR-Regular-Hestia.eot'),
+    url('../font/NotoSans/NotoSansKR-Regular-Hestia.eot?#iefix') format('embedded-opentype'),
+    url('../font/NotoSans/NotoSansKR-Regular-Hestia.woff') format('woff'),
+    url('../font/NotoSans/NotoSansKR-Regular-Hestia.otf') format('opentype');
+}
+@font-face {
+    font-family:'Noto Sans';
+    font-style:normal;
+    font-weight:500;
+    src: local(※),
+    url('../font/NotoSans/NotoSansKR-Medium-Hestia.eot'),
+    url('../font/NotoSans/NotoSansKR-Medium-Hestia.eot?#iefix') format('embedded-opentype'),
+    url('../font/NotoSans/NotoSansKR-Medium-Hestia.woff') format('woff'),
+    url('../font/NotoSans/NotoSansKR-Medium-Hestia.otf') format('opentype');
+}
+@font-face {
+    font-family:'Noto Sans';
+    font-style:normal;
+    font-weight:600;
+    src: local(※),
+    url('../font/NotoSans/NotoSansKR-Bold-Hestia.eot'),
+    url('../font/NotoSans/NotoSansKR-Bold-Hestia.eot?#iefix') format('embedded-opentype'),
+    url('../font/NotoSans/NotoSansKR-Bold-Hestia.woff') format('woff'),
+    url('../font/NotoSans/NotoSansKR-Bold-Hestia.otf') format('opentype');
+}
+@font-face {
+    font-family:'Noto Sans';
+    font-style:normal;
+    font-weight:800;
+    src: local(※),
+    url('../font/NotoSans/NotoSansKR-Black-Hestia.eot'),
+    url('../font/NotoSans/NotoSansKR-Black-Hestia.eot?#iefix') format('embedded-opentype'),
+    url('../font/NotoSans/NotoSansKR-Black-Hestia.woff') format('woff'),
+    url('../font/NotoSans/NotoSansKR-Black-Hestia.otf') format('opentype');
+}
+
+/* -------- SCoreDream -------- */
+@font-face {
+ font-family: 'SCoreDream';
+ font-style : normal;
+ font-weight :100;
+ src: local(※),
+ url('../font/SCoreDream/SCoreDream1.woff2') format('woff2'),
+ url('../font/SCoreDream/SCoreDream1.woff') format('woff');
+}
+@font-face {
+ font-family: 'SCoreDream';
+ font-style : normal;
+ font-weight :200;
+ src: local(※),
+ url('../font/SCoreDream/SCoreDream2.woff2') format('woff2'),
+ url('../font/SCoreDream/SCoreDream2.woff') format('woff');
+}
+@font-face {
+ font-family: 'SCoreDream';
+ font-style : normal;
+ font-weight :300;
+ src: local(※),
+ url('../font/SCoreDream/SCoreDream3.woff2') format('woff2'),
+ url('../font/SCoreDream/SCoreDream3.woff') format('woff');
+}
+@font-face {
+ font-family: 'SCoreDream';
+ font-style : normal;
+ font-weight :400;
+ src: local(※),
+ url('../font/SCoreDream/SCoreDream4.woff2') format('woff2'),
+ url('../font/SCoreDream/SCoreDream4.woff') format('woff'),
+ url('../font/SCoreDream/SCoreDream4.ttf') format('truetype'); 
+}
+@font-face {
+ font-family: 'SCoreDream';
+ font-style : normal;
+ font-weight :500;
+ src: local(※),
+ url('../font/SCoreDream/SCoreDream5.woff2') format('woff2'),
+ url('../font/SCoreDream/SCoreDream5.woff') format('woff');
+}
+@font-face {
+ font-family: 'SCoreDream';
+ font-style : normal;
+ font-weight :600;
+ src: local(※),
+ url('../font/SCoreDream/SCoreDream6.woff2') format('woff2'),
+ url('../font/SCoreDream/SCoreDream6.woff') format('woff'),
+ url('../font/SCoreDream/SCoreDream6.ttf') format('truetype'); 
+}
+@font-face {
+ font-family: 'SCoreDream';
+ font-style : normal;
+ font-weight :700;
+ src: local(※),
+ url('../font/SCoreDream/SCoreDream7.woff2') format('woff2'),
+ url('../font/SCoreDream/SCoreDream7.woff') format('woff');
+}
+@font-face {
+ font-family: 'SCoreDream';
+ font-style : normal;
+ font-weight :800;
+ src: local(※),
+ url('../font/SCoreDream/SCoreDream8.woff2') format('woff2'),
+ url('../font/SCoreDream/SCoreDream8.woff') format('woff'),
+ url('../font/SCoreDream/SCoreDream8.ttf') format('truetype'); 
+}
+@font-face {
+ font-family: 'SCoreDream';
+ font-style : normal;
+ font-weight :900;
+ src: local(※),
+ url('../font/SCoreDream/SCoreDream9.woff2') format('woff2'),
+ url('../font/SCoreDream/SCoreDream9.woff') format('woff');
+}
+
+/* -------- GmarketSans -------- */
+@font-face {
+    font-family:'GmarketSans';
+    font-style:normal;
+    font-weight:200;
+    src: local(※),
+    url('../font/GmarketSans/GmarketSansLight.woff2') format('woff2'),
+    url('../font/GmarketSans/GmarketSansLight.woff') format('woff'),
+    url('../font/GmarketSans/GmarketSansLight.otf') format('opentype');
+}
+@font-face {
+    font-family:'GmarketSans';
+    font-style:normal;
+    font-weight:400;
+    src: local(※),
+    url('../font/GmarketSans/GmarketSansMedium.woff2') format('woff2'),
+    url('../font/GmarketSans/GmarketSansMedium.woff') format('woff'),
+    url('../font/GmarketSans/GmarketSansMedium.otf') format('opentype');
+}
+@font-face {
+    font-family:'GmarketSans';
+    font-style:normal;
+    font-weight:600;
+    src: local(※),
+    url('../font/GmarketSans/GmarketSansBold.woff2') format('woff2'),
+    url('../font/GmarketSans/GmarketSansBold.woff') format('woff'),
+    url('../font/GmarketSans/GmarketSansBold.otf') format('opentype');
+}
