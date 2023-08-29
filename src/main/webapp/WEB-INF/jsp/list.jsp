@@ -164,7 +164,23 @@
 	<script>	
 		function clickTitle(board_num, board_id){
 			if(${isAdmin} == true){
-				location.href = "<c:url value='/readBoard.do'/>?board_id=" + board_id;
+				let xhr = new XMLHttpRequest();
+				let password = "";
+				xhr.open("GET", "<c:url value="/getBoardPassword/"/>" + board_id + ".do");
+				//xhr.open("GET", "/getBoardPassword/" + board_id + ".do");
+
+				xhr.send();
+				
+				xhr.onload = () => {
+					if(xhr.status == 200){
+	 					password = xhr.response;
+						
+					}else{
+						//console.log(xhr.response);
+					}
+				}
+				
+				location.href = "<c:url value='/readBoard.do'/>?board_id=" + board_id + "&password=" + password;
 			}else{				
 				if(document.querySelector(".td-password") != null || document.querySelector(".td-password") != undefined){
 					document.querySelector(".td-password").remove();
@@ -197,6 +213,8 @@
 			
 			let xhr = new XMLHttpRequest();
 			xhr.open("GET", "<c:url value="/getBoardPassword/"/>" + board_id + ".do");
+			//xhr.open("GET", "/getBoardPassword/" + board_id + ".do");
+
 			xhr.send();
 			
 			xhr.onload = () => {
@@ -205,7 +223,7 @@
 					
 					if(userInputPassword == password){
 						//console.log("true");
-						location.href = "<c:url value='/readBoard.do'/>?board_id=" + board_id;
+						location.href = "<c:url value='/readBoard.do'/>?board_id=" + board_id + "&password=" + password;
 					} else{
  						if(document.querySelector(".td-password").querySelector("#error_msg") == null || document.querySelector(".td-password").querySelector("#error_msg") == undefined){					
 							document.querySelector(".td-password").innerHTML += "<span id='error_msg'>비밀번호를 확인해주세요</span>";

@@ -64,6 +64,10 @@ public class TestController {
 		return "testPage";
 	}
 	
+	/*
+	 * @GetMapping("/") public String index() { return "redirect:/list.do"; }
+	 */
+	
 	
 	@GetMapping("/list.do")
 	public String list(Model m, Integer page, Integer pageSize) {
@@ -94,9 +98,21 @@ public class TestController {
 	}
 	
 	@GetMapping("/readBoard.do")
-	public String readBoard(Model m, Integer board_id, HttpServletRequest request, HttpServletResponse response) {
+	public String readBoard(Model m, Integer board_id, 
+			@RequestParam(required = false, value="password") String password,
+			HttpServletRequest request, HttpServletResponse response) {
 		BoardVo boardVo = boardService.getBoardOne(board_id);
+		HttpSession session = request.getSession();
 		
+		System.out.println("세션전");
+		//일반유저
+		if(session.getAttribute("id") == null || !session.getAttribute("id").equals("admin")) {
+			System.out.println("일반유저");
+			System.out.println(password);
+			if(password == null || password.equals("")) {
+				return "redirect:list.do";
+			}
+		} 
 		
 		//쿠키에다가 bno를 넘겨서 있으면 view_cnt를 올리지 않기
 		Cookie[] cookies = request.getCookies();
@@ -104,6 +120,9 @@ public class TestController {
 		
 		
 		// boardView가 key인 값이 있으면 oldCookie에다가 쿠키값 넣어주기
+		
+		
+		
 		if(cookies != null) {
 			for(Cookie cookie : cookies) {
 				
